@@ -85,6 +85,7 @@ function createTemplate(obj) {
 }
 function cardDelete(cardItem) {
   const buttonDelete = cardItem.querySelector(".card_buttonDelete");
+  
   buttonDelete.addEventListener("click", () => {
     cardItem.remove();
   });
@@ -103,25 +104,31 @@ function deleteAllCards(cardItem) {
     cardItem.remove();
   });
 }
-function CreateNewCard() {
-  const inputLink = page.querySelector(".input_link").value;
+
+function CreateNewCard(obj) {
+  const inputLink = page.querySelector(".input_link").value.href;
   const inputname = page.querySelector(".input_name").value;
-  const newCard = {
+  const newCardData = {
     link: inputLink,
     title: inputname,
   };
-  createTemplate(newCard);
+
+  const newCard = createTemplate(newCardData);
+  cardDelete(newCard);
+  cardliked(newCard);
+
   page.querySelector(".input_link").value = "";
   page.querySelector(".input_name").value = "";
 }
-function CratedCard(){
-    const addItemButton = page.querySelector(".add_item");
-    addItemButton.addEventListener("click", (CreateNewCard))
-}
+
+const addItemButton = page.querySelector(".add_item");
+addItemButton.addEventListener("click", () => {
+  CreateNewCard();
+});
+
 dataCard.forEach((item) => {
   const completeCard = createTemplate(item);
   cardDelete(completeCard);
   cardliked(completeCard);
   deleteAllCards(completeCard);
-  CratedCard(completeCard)
 });
