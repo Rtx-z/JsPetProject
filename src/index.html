@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Типо русский тик ток" />
+    <link
+      rel="icon"
+      href="./assests/icons/icons8-youtube.svg"
+      type="image/x-icon"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+
+  <body>
+    <header class="header_theme">
+      <h1 class="zagolovok">Interesting YouTube channels</h1>
+    </header>
+
+    <main class="page">
+      <form id="Form_ForCard">
+        <div class="inputs">
+          <button class="button_deleteALL">Удалить все</button>
+          <input
+            type="text"
+            class="input_name"
+            placeholder="Название YouTube канала"
+            id="name__input"
+          />
+          <input
+            type="text"
+            class="input_link"
+            placeholder="Ссылка на него"
+            id="link__input"
+          />
+          <button class="add_item">Добавить</button>
+        </div>
+      </form>
+      <ul class="cardList"></ul>
+      <div class="modal">
+        <div class="ModalConDiv">
+          <form class="form">
+            <h3 class="TextModal">Редактируйте Текст</h3>
+            <div class="Text_inputDiv">
+              <label for="title">Текст</label>
+              <input type="text" id="Text_input" name="title" required/>
+            </div>
+
+            <div class="Sylka_inputDiv">
+              <label for="link">Ссылка</label>
+              <input type="text" id="input_link" name="link" required/>
+            </div>
+            <div class="Div_Button">
+            <button class="Modalbutton" id="ModalButtonAccept"  type="submit">Сохранить</button>
+            <button type="submit" class="ModalButtonCancel">Отменить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="footer_theme"></footer>
+    <template id="template_card">
+      <li class="cardItem">
+        <button class="card_buttonDelete"></button>
+        <p class="name_YT"></p>
+        <a class="link_YT" href="">Ссылка на канал</a>
+        <button class="card_buttonLike"></button>
+        <button class="Edit">Edit</button>
+      </li>
+    </template>
+  </body>
+  <script type="module" src="./scripts/main.js"></script>
+</html>
